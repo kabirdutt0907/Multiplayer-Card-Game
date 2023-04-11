@@ -10,6 +10,13 @@ public class Card {
 
     private Rank rank;
 
+    public Card(Suit suit, Rank rank, boolean isAction, Action action) {
+        this.suit = suit;
+        this.rank = rank;
+        this.isAction = isAction;
+        this.action = action;
+    }
+
     private boolean isAction;
 
     private Action action;
