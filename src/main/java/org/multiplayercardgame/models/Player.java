@@ -1,5 +1,7 @@
 package org.multiplayercardgame.models;
 
+import org.multiplayercardgame.exception.InvalidCardException;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,7 +39,18 @@ public class Player {
     public int getHandSize() {
         return hand.size();
     }
-    
+
+    public Card playCard(int index) {
+        if (index < 0 || index >= hand.size()) {
+            try {
+                throw new InvalidCardException("Invalid card index : "+index);
+            } catch (InvalidCardException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        return hand.remove(index);
+    }
+
     @Override
     public String toString() {
         return "Player{" +
