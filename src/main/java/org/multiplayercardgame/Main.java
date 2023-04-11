@@ -1,6 +1,7 @@
-package org.example;
+package org.multiplayercardgame;
 
 public class Main {
+
     public static void main(String[] args) {
         System.out.println("Hello world!");
     }
