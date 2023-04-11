@@ -27,23 +27,29 @@ public class Deck {
 
     private ICardUtils cardUtils;
 
-    public Deck(){
+    public Deck() {
         this.cardList = new ArrayList<>();
         for (Suit suit : Suit.values()) {
             for (Rank rank : Rank.values()) {
                 if (cardUtils.checkIfActionCardOrNot(rank)) {
                     Action action = cardUtils.getCardAction(rank);
                     cardList.add(new Card(suit, rank, true, action));
-                }
-                else{
+                } else {
                     cardList.add(new Card(suit, rank, false, null));
                 }
             }
         }
     }
 
-    public void shuffle(){
+    public void shuffle() {
         Collections.shuffle(cardList);
+    }
+
+    @Override
+    public String toString() {
+        return "Deck{" +
+                "cardList=" + cardList +
+                '}';
     }
 
     public Card drawCard() {
@@ -52,6 +58,7 @@ public class Deck {
         }
         return cardList.remove(0);
     }
+
     public int cardsRemaining() {
         return cardList.size();
     }
