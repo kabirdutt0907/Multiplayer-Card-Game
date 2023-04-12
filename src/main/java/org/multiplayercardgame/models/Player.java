@@ -50,6 +50,13 @@ public class Player {
         }
         return hand.remove(index);
     }
+    public void addToHand(Card card){
+        this.hand.add(card);
+    }
+
+    public void removeCardFromHand(Card card){
+        this.hand.remove(card);
+    }
 
     @Override
     public String toString() {
