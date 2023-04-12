@@ -82,5 +82,5 @@ public class Game {
     public void addPlayer(Player player) {
         this.playerList.add(player);
     }
-    
+
 }

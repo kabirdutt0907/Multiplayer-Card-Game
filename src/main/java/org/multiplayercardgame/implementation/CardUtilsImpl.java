@@ -7,6 +7,7 @@ import org.multiplayercardgame.utilities.ICardUtils;
 public class CardUtilsImpl implements ICardUtils {
 
 
+
     @Override
     public boolean checkIfActionCardOrNot(Rank rank) {
         return (rank.equals(Rank.ACE) || rank.equals(Rank.JACK) || rank.equals(Rank.KING) || rank.equals(Rank.QUEEN));

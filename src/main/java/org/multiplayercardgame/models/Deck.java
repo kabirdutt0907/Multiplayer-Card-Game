@@ -3,6 +3,7 @@ package org.multiplayercardgame.models;
 import org.multiplayercardgame.enums.Action;
 import org.multiplayercardgame.enums.Rank;
 import org.multiplayercardgame.enums.Suit;
+import org.multiplayercardgame.implementation.CardUtilsImpl;
 import org.multiplayercardgame.utilities.ICardUtils;
 
 import java.util.ArrayList;
@@ -15,6 +16,7 @@ public class Deck {
 
     public Deck(List<Card> cardList) {
         this.cardList = cardList;
+        this.cardUtils = new CardUtilsImpl();
     }
 
     public List<Card> getCardList() {
@@ -25,7 +27,7 @@ public class Deck {
         this.cardList = cardList;
     }
 
-    private ICardUtils cardUtils;
+    private CardUtilsImpl cardUtils = new CardUtilsImpl();
 
     public Deck() {
         this.cardList = new ArrayList<>();
